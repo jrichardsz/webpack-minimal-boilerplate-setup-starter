@@ -1,3 +1,148 @@
-body {
-  background-color: aqua;
+
+.card {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+
+.dark .card {
+  --tw-bg-opacity: 1;
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
+}
+
+.card {
+  --tw-border-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+.dark .card {
+  --tw-border-opacity: 1;
+  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+}
+
+.card {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  padding: 1rem;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.pill {
+  border-radius: 9999px;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  line-height: 1.25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.histogram {
+  height: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.hitbox {
+  align-items: flex-end;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 1px;
+  border-radius: 3.75px;
+}
+
+.bar {
+  --tw-bg-opacity: 1;
+  background-color: rgba(209, 213, 219, var(--tw-bg-opacity));
+}
+
+.dark .bar {
+  --tw-bg-opacity: 1;
+  background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
+}
+
+.bar {
+  padding-bottom: 1px;
+  height: 100%;
+  width: 85%;
+  border-radius: 100px;
+}
+
+.bar.green {
+  --tw-bg-opacity: 1;
+  background-color: rgba(74, 222, 128, var(--tw-bg-opacity));
+}
+
+.dark .bar.green {
+  --tw-bg-opacity: 1;
+  background-color: rgba(21, 128, 61, var(--tw-bg-opacity));
+}
+
+.bar.red {
+  --tw-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
+}
+
+.dark .bar.red {
+  --tw-bg-opacity: 1;
+  background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+}
+
+.bar.yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgba(250, 204, 21, var(--tw-bg-opacity));
+}
+
+.dark .bar.yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgba(161, 98, 7, var(--tw-bg-opacity));
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .content {
+  display: inline-block;
+  position: absolute;
+  visibility: hidden;
+  z-index: 50;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+
+.dark .tooltip .content {
+  --tw-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+}
+
+.tooltip .content {
+  border-radius: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  opacity: 0;
+  --tw-scale-x: .5;
+  --tw-scale-y: .5;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 200ms;
+}
+
+.tooltip:hover .content {
+  opacity: 1;
+  visibility: visible;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
 }

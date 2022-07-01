@@ -9,6 +9,7 @@ Feel free to contribute, improve or use it for your projects.
 
 - Webpack
 - Babel
+- [Ejs](https://ejs.co/)
 
 
 ### What does this configuration handles?
