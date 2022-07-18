@@ -5,44 +5,14 @@ This is my personal `webpack` configuration, that I am using for small static pr
 Feel free to contribute, improve or use it for your projects.
 
 
-### Contains some neat stuff out of the box!
+### Templates
 
-- Webpack
-- Babel
-
-
-### What does this configuration handles?
-
-
-> Common for development & production environment
-
-- it accepts one entry point; `src/index.js`
-- it compiles everything with relative paths, rather than absolute
-
-
-> Development environment
-
-- it runs webpack-dev-server
-- it builds source-maps
-
-
-> Production environment
-
-- it minifies `js`
-- it has subresource-integrity
-
-
-### Requirements
-
-- Nodejs 14 as a minimum
-
-### Commands?
-
-It's pretty easy... You do not have a bunch of commands, just two of them:
-
-- `npm install` – to install libraries
-- `npm run dev` – to start with development
-- `npm run build` - to make it ready for production use
+- [Clear webpack](https://github.com/jrichardsz/webpack-minimal-boilerplate-setup-starter/tree/webpack-clear-starter)
+  - latest webpack starter to be used on any project
+- [webpack + ejs](https://github.com/jrichardsz/webpack-minimal-boilerplate-setup-starter/tree/webpack_ejs)
+  - based in the previous plus ejs :)
+- [spa-starter-elementary](https://github.com/jrichardsz/webpack-minimal-boilerplate-setup-starter/tree/spa-starter-elementary)
+  - based in the previous plus : events and listeners
 
 # Contributors
 
