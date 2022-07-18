@@ -1,12 +1,30 @@
 import './css/main.css';
-import template from './pages/template.html';
+import EntryPointEventListener from './listeners/EntryPointEventListener.js';
+import TodayHeaderEventListener from './listeners/TodayHeaderEventListener.js';
 
-import ejs from 'ejs/ejs.min.js';
-let users = ['geddy', 'neil', 'alex'];
-let html = ejs.render(template, {users: users});
+var _CONTEXT = {};
+_CONTEXT["EntryPointEventListener"] = new EntryPointEventListener();
+_CONTEXT["TodayHeaderEventListener"] = new TodayHeaderEventListener();
 
-console.log("hello world!!");
-console.log("raw template");
-console.log(template);
-console.log("evaluated template");
-console.log(html);
+document.addEventListener("DOMContentLoaded", function(event) {
+
+  //register global router
+  document.addEventListener("simple-event", eventRouter);
+
+  document.dispatchEvent(new CustomEvent("simple-event", {
+    'detail': {
+      eventId: "EntryPointEvent"
+    }
+  }));
+});
+
+
+function eventRouter(e) {
+  console.log(e.detail.eventId);
+  if (typeof _CONTEXT[`${e.detail.eventId}Listener`] !== 'undefined') {
+    var listener = _CONTEXT[`${e.detail.eventId}Listener`];
+    var payload = e.detail.payload;
+    listener.start(payload)
+  }
+
+}

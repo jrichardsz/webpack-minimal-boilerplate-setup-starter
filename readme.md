@@ -1,4 +1,4 @@
-# Webpack 5 - Minimal Boilerplate Setup Starter
+# SPA Boilerplate Setup Starter
 
 This is my personal `webpack` configuration, that I am using for small static projects or as starter for libraries development.
 
@@ -10,27 +10,6 @@ Feel free to contribute, improve or use it for your projects.
 - Webpack
 - Babel
 - [Ejs](https://ejs.co/)
-
-
-### What does this configuration handles?
-
-
-> Common for development & production environment
-
-- it accepts one entry point; `src/index.js`
-- it compiles everything with relative paths, rather than absolute
-
-
-> Development environment
-
-- it runs webpack-dev-server
-- it builds source-maps
-
-
-> Production environment
-
-- it minifies `js`
-- it has subresource-integrity
 
 
 ### Requirements
@@ -45,7 +24,36 @@ It's pretty easy... You do not have a bunch of commands, just two of them:
 - `npm run dev` – to start with development
 - `npm run build` - to make it ready for production use
 
-# Contributors
+
+### Pages
+
+You could add any plain html or with ejs in this folder **src/pages**.
+
+Then you could import it with **import template from '../pages/template.html';**
+
+### Listeners
+
+This framework is based on events and its listeners:
+
+- When page is loaded, an **EntryPointEvent** event is triggered
+- If a listener with name src/listeners**/EntryPointEventListener.js** exist and mapped, it is executed automatically.
+
+```
+var _CONTEXT = {};
+_CONTEXT["EntryPointEventListener"] = new EntryPointEventListener();
+```
+
+You could use this to add more Listeners for example:
+
+- buttons
+- open pages
+- etc
+
+### Roadmap
+
+- Using webpack loaders, register automatically the Listeners on `var _CONTEXT = {}`
+
+### Contributors
 
 Thanks goes to these wonderful people :
 

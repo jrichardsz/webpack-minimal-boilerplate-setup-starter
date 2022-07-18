@@ -1,11 +1,14 @@
-const HtmlPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: ["./src/index.js"],
   output: {
     filename: "bundle.js",
-    path: __dirname + "/public",
+    path: __dirname + "/build",
     publicPath: "/"
   },
   module: {
@@ -21,12 +24,26 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+          generator: {
+             filename: 'images/[name][ext]'
+          }
       }
     ]
   },
-  plugins: [new HtmlPlugin({
-    title: 'Hello World app'
-  })],
+  plugins: [
+    // CleanWebpackPlugin will do some clean up/remove folder before build
+    // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
+    new CleanWebpackPlugin(),
+    // The plugin will generate an HTML5 file for you that includes all your webpack bundles in the body using script tags
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "index.html"
+    }),
+  ],
   resolve: {
     fallback: {
       "fs": false
