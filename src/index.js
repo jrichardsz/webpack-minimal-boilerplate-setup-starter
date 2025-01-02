@@ -1,7 +1,7 @@
 import './css/main.css';
+import ejs from 'ejs/ejs.min.js';
 import template from './pages/template.html';
 
-import ejs from 'ejs/ejs.min.js';
 let users = ['geddy', 'neil', 'alex'];
 let html = ejs.render(template, {users: users});
 
